@@ -1,0 +1,23 @@
+{% extends "base_header.html" %}
+
+
+
+
+{% block content %}
+
+<body class="bg-grey-lightest font-serif leading-normal tracking-normal bg-fixed" style="background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);">
+<div id="board">
+
+{% if latest_question_list %}
+  <ul>
+  {% for question in latest_question_list %}
+      <li><a href="{% url 'polls:detail' question.id %}"> {{question.question_text }} </a></li>
+  {% endfor %}
+  </ul>
+{% else %}
+  <p> No polls are available.</p>
+{% endif %}
+</div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tailwind CSS Skeleton</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="{% static "css/prism.css" %}">
+  <link rel="stylesheet" href="{% static "css/styles.min.css" %}">
+</head>
+
+
+
+<header id="app" class="justify-between items-center">
+  <div  class="flex justify-between items-center">
+  <!-- header name/logo not sure if needed -->
+  <div class="mt-2 ml-2">
+    <a href='/welcome/' class="hover:text-indigo-600 text-indigo-800 block">
+      <svg class="h-12 w-12 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="heroicon-ui" d="M13 20v-5h-2v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7.59l-.3.3a1 1 0 1 1-1.4-1.42l9-9a1 1 0 0 1 1.4 0l9 9a1 1 0 0 1-1.4 1.42l-.3-.3V20a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2zm5 0v-9.59l-6-6-6 6V20h3v-5c0-1.1.9-2 2-2h2a2 2 0 0 1 2 2v5h3z"/></svg>
+    </a>
+  </div>
+  <div>
+    <h1 class="text-5xl">poop + pee = ❤️</h1>
+  </div>
+  <!-- Menu icon -->
+  <div class="mt-2 mr-6 ">
+    <button v-on:click="isOpen = !isOpen"class="hover:text-indigo-600 text-indigo-800 block">
+      <svg class="h-12 w-12 fill-current "xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" ><path class="heroicon-ui" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/></svg>
+    </button>
+  </div>
+  </div>
+
+
+  <div v-bind:class="{ 'hidden': !isOpen }" class="px-3 py-3">
+  <!-- menu links -->
+    <a class="block px-2 text-white font-semibold  rounded hover:bg-gray-800" href="/polls/">Polls app</a>
+    <a class="block px-2 mt-1 text-white font-semibold  rounded hover:bg-gray-800" href="/welcome/crud">Simple CRUD app made with PHP</a>
+    <a class="block px-2 mt-1 text-white font-semibold  rounded hover:bg-gray-800" href="">Lorem</a>
+    <a class="block px-2 mt-1 text-white font-semibold  rounded hover:bg-gray-800" href="">Lorem</a>
+
+  </div>
+  <script>
+  new Vue({
+      delimiters: ['${', '}'],
+      el: '#app',
+      data: {
+        isOpen: false
+      },
+    });
+</script>
+
+</header>
+
+
+
+{% block content %}
+  <h1>DEFAULT</h1>
+
+{% endblock %}
+
+
+</html>
