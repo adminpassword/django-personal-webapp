@@ -23,5 +23,5 @@ urlpatterns = [
     path('polls/', include('polls.urls')),
     path('welcome/', include('main_page.urls')),
     path('admin/', admin.site.urls),
-    #path('debug/', include(debug_toolbar.urls)),
+    path('debug/', include(debug_toolbar.urls)),
 ]

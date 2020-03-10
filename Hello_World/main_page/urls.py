@@ -6,5 +6,6 @@ urlpatterns = [
     # /welcome/
     path('', views.HomePageView.as_view(), name='index'),
     path('crud/', views.PhpPageView.as_view(), name='crud'),
+    path('test/', views.TestPageView.as_view(), name='test'),
 
 ]
